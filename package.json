@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "fastify start index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
     "fastify-cli": "^2.13.0"
