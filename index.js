@@ -35,10 +35,10 @@ fastify.get('/quan-huyen', async (request, reply) => {
 fastify.get('/quan-huyen/:code', async (request, reply) => {
   try {
     const code = pad0(request.params.code, 3);
-    const quanHuyen = require(`./data/quan-huyen/${code}.json`);
-    return quanHuyen;
+    const xaPhuong = require(`./data/xa-phuong/${code}.json`);
+    return xaPhuong;
   } catch (err) {
-    reply.code('404').send({ message: 'Mã tỉnh thành không tồn tại!' });
+    reply.code('404').send({ message: 'Mã quận huyện không tồn tại!' });
   }
 });
 
