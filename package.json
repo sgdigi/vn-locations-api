@@ -13,6 +13,7 @@
     "fastify-cli": "^2.13.0"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "fastify": "^3.18.0"
   }
 }

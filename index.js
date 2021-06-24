@@ -1,6 +1,8 @@
 const fastify = require('fastify')({ logger: true });
 const { pad0 } = require('./utils');
 
+require('dotenv').config();
+
 const tinhThanh = require('./data/tinh_tp.json');
 const quanHuyen = require('./data/quan_huyen.json');
 
@@ -42,7 +44,10 @@ fastify.get('/quan-huyen/:code', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(3000);
+    await fastify.listen(
+      process.env.PORT || 3000,
+      process.env.HOST || '127.0.0.1'
+    );
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
